@@ -1,0 +1,22 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+Subroutine_1                                                                      0x0005E     26
+Subroutine_2                                                                      0x00078     25
+Subroutine_3                                                                      0x00091      9
+Subroutine_4                                                                      0x0009A     37
+Subroutine_5                                                                      0x000BF     40
+Subroutine_6                                                                      0x000E7     79
+main                                                                              0x00136     23
