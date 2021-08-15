@@ -1,0 +1,10 @@
+VERSION:3 SOURCE_TIMESTAMP:514B1A16
+NODE:I LEVEL:0 LINE:8 "C:\cvavr\inc\mega16.h"
+NODE:I LEVEL:0 LINE:9 "C:\cvavr\inc\delay.h"
+NODE:I LEVEL:0 LINE:10 "C:\cvavr\inc\stdio.h"
+NODE:M LEVEL:0 LINE:12 "portA"
+NODE:M LEVEL:0 LINE:13 "portB"
+NODE:M LEVEL:0 LINE:14 "portC"
+NODE:M LEVEL:0 LINE:15 "portD"
+NODE:F LEVEL:0 LINE:16 "subroutine_1(int number,unsigned char selectPort,int time)"
+NODE:F LEVEL:0 LINE:73 "main(void)"

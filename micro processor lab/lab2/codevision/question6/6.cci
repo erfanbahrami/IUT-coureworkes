@@ -1,0 +1,10 @@
+VERSION:3 SOURCE_TIMESTAMP:514B7D9C
+NODE:I LEVEL:0 LINE:8 "C:\cvavr\inc\mega16.h"
+NODE:I LEVEL:0 LINE:9 "C:\cvavr\inc\delay.h"
+NODE:I LEVEL:0 LINE:10 "C:\cvavr\inc\stdio.h"
+NODE:I LEVEL:0 LINE:11 "D:\daneshga\terme 7\aze micro\HomeWork2\codevision\question6\source\all_of_subroutins.h"
+NODE:M LEVEL:0 LINE:13 "portA"
+NODE:M LEVEL:0 LINE:14 "portB"
+NODE:M LEVEL:0 LINE:15 "portC"
+NODE:M LEVEL:0 LINE:16 "portD"
+NODE:F LEVEL:0 LINE:19 "main(void)"

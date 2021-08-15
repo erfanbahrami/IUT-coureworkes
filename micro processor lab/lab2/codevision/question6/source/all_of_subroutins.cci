@@ -1,0 +1,13 @@
+VERSION:3 SOURCE_TIMESTAMP:514B7D34
+NODE:I LEVEL:0 LINE:1 "C:\cvavr\inc\mega16.h"
+NODE:I LEVEL:0 LINE:2 "C:\cvavr\inc\delay.h"
+NODE:I LEVEL:0 LINE:3 "C:\cvavr\inc\stdio.h"
+NODE:M LEVEL:0 LINE:5 "portA"
+NODE:M LEVEL:0 LINE:6 "portB"
+NODE:M LEVEL:0 LINE:7 "portC"
+NODE:M LEVEL:0 LINE:8 "portD"
+NODE:F LEVEL:0 LINE:9 "Subroutine_1(int number,unsigned char selectPort,int time)"
+NODE:F LEVEL:0 LINE:65 "Subroutine_2(int location,int time)"
+NODE:F LEVEL:0 LINE:79 "Subroutine_3(unsigned char select_input,unsigned char select_output)"
+NODE:F LEVEL:0 LINE:121 "Subroutine_4(unsigned char incDec,unsigned char syncAsinc)"
+NODE:F LEVEL:0 LINE:208 "Subroutine_5(float deghat)"

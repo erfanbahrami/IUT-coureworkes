@@ -1,0 +1,17 @@
+/*
+ * 3.c
+ *
+ * Created: 2020-10-11 3:41:22 AM
+ * Author: KPS
+ */
+
+#include <io.h>
+
+void main(void)
+{
+while (1)
+    {
+    // Please write your application code here
+
+    }
+}

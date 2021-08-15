@@ -1,0 +1,27 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+main                                                                              0x0006D     31
+Subroutine_1                                                                      0x0008C    110
+Subroutine_2                                                                      0x000FA     45
+Subroutine_3                                                                      0x00127     83
+Subroutine_4                                                                      0x0017A    146
+Subroutine_5                                                                      0x0020C    142
+putchar                                                                           0x0029A      7
+put_usart_G100                                                                    0x002A1     13
+_print_G100                                                                       0x002AE    308
+printf                                                                            0x003E2     37
+strlen                                                                            0x00407     12
+strlenf                                                                           0x00413     13
