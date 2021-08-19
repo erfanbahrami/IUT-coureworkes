@@ -1,0 +1,41 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+flag                                                                              0x019C       1
+_base_y                                                                           0x019D       4
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+b                                                                                 R5           1
+f                                                                                 R4           1
+shift                                                                             R7           1
+_lcd_x                                                                            R6           1
+_lcd_y                                                                            R9           1
+_lcd_maxx                                                                         R8           1
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+ext_int0_isr                                                                      0x0008B      5
+timer2_ovf_isr                                                                    0x00090     25
+main                                                                              0x000A9     35
+ioInit                                                                            0x000CC      9
+timer0Init                                                                        0x000D5      7
+timer2Init                                                                        0x000DC      9
+interruptsInit                                                                    0x000E5     12
+lcdInit                                                                           0x000F1      4
+init                                                                              0x000F5      6
+changeDutyCycle                                                                   0x000FB     19
+stepperMotorSignal                                                                0x0010E     25
+_lcd_write_nibble_G100                                                            0x00127     20
+_lcd_write_data                                                                   0x0013B     12
+lcd_gotoxy                                                                        0x00147     13
+lcd_clear                                                                         0x00154     10
+lcd_putchar                                                                       0x0015E     21
+lcd_puts                                                                          0x00173     17
+lcd_init                                                                          0x00184     43

@@ -1,0 +1,6 @@
+VERSION:3 SOURCE_TIMESTAMP:515D5409
+NODE:I LEVEL:0 LINE:1 "C:\Users\KPS\Desktop\Learning\IUT\99-1\AZ digital\section5\my code\work5\source\headerFile.h"
+NODE:V LEVEL:0 LINE:3 "flag -> RAM:????"
+NODE:V LEVEL:0 LINE:4 "shift -> R7"
+NODE:F LEVEL:0 LINE:6 "changeDutyCycle(void)"
+NODE:F LEVEL:0 LINE:15 "stepperMotorSignal(void)"
