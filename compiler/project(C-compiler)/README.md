@@ -14,9 +14,9 @@ Flex and Bison are tools for building programs that handle structured input. The
 You can get and install Flex & Bison tools using the below commands:
 
 ```
-sudo apt-get update
-sudo apt-get install flex
-sudo apt-get install bison
+$sudo apt-get update
+$sudo apt-get install flex
+$sudo apt-get install bison
 ```
 
 ### Related Links
@@ -33,9 +33,9 @@ download proj.l as tokenizer & proj.y as parser
 ### Step 2: Compile & Run Files
 
 ```
-flex projr.l
-bison -d proj.y
-gcc proj.tab.c lex.yy.c -o compiler
+$flex proj.l
+$bison -d proj.y
+$gcc proj.tab.c lex.yy.c -o compiler
 ```
 
 ### Step 3: Compile Your C Program Using My Compiler
@@ -43,5 +43,5 @@ gcc proj.tab.c lex.yy.c -o compiler
 Finally, you can compile your C program using the below command:
 
 ```
-./compiler input.c output.asm
+$./compiler input.c output.asm
 ```
