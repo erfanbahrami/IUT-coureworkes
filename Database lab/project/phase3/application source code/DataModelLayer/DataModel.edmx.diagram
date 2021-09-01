@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cec315dd5e3545d2875dfd14b3a1d8e1" Name="Diagram1">
+        <EntityTypeShape EntityType="Music_Academy_ManagementModel.academy" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Music_Academy_ManagementModel.Attendance" Width="1.5" PointX="7.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Music_Academy_ManagementModel.Class" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Music_Academy_ManagementModel.Employee" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Music_Academy_ManagementModel.Employee_Pv" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Music_Academy_ManagementModel.Payment" Width="1.5" PointX="8.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Music_Academy_ManagementModel.Student" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Music_Academy_ManagementModel.Student_Term" Width="1.5" PointX="10.5" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Music_Academy_ManagementModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Music_Academy_ManagementModel.Teacher_Instr" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Music_Academy_ManagementModel.Term" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <AssociationConnector Association="Music_Academy_ManagementModel.FK__Attendance__SID" ManuallyRouted="false" />
+        <AssociationConnector Association="Music_Academy_ManagementModel.FK__Attendance__Term" ManuallyRouted="false" />
+        <AssociationConnector Association="Music_Academy_ManagementModel.FK__Class__SID" ManuallyRouted="false" />
+        <AssociationConnector Association="Music_Academy_ManagementModel.FK_Class" ManuallyRouted="false" />
+        <AssociationConnector Association="Music_Academy_ManagementModel.FK__Employee_Pv" ManuallyRouted="false" />
+        <AssociationConnector Association="Music_Academy_ManagementModel.FK__Teacher_Ins__EID" ManuallyRouted="false" />
+        <AssociationConnector Association="Music_Academy_ManagementModel.FK__Student_T__Term" ManuallyRouted="false" />
+        <AssociationConnector Association="Music_Academy_ManagementModel.FK__Student_Ter__SID" ManuallyRouted="false" />
+        <AssociationConnector Association="Music_Academy_ManagementModel.FK__Student_T__Pay_I" ManuallyRouted="false" />
+        <AssociationConnector Association="Music_Academy_ManagementModel.FK_Term" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Music_Academy_ManagementModel.USER" Width="1.5" PointX="5.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,21 @@
+﻿<Window x:Class="Samaneye_Amoozeshgah_irprogram.com_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" 
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Style="{DynamicResource SkinWindowStyle}"
+         
+        
+        Height="570" Width="870">
+
+
+    <Grid Background="{DynamicResource WindowBackgroundBrush}">
+        <Canvas Grid.Row="1">
+
+            
+
+
+
+        </Canvas>
+    </Grid>
+</Window>

@@ -1,0 +1,38 @@
+﻿<Window x:Class="Spadana_Music.Win_manageAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Spadana_Music"
+        mc:Ignorable="d"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Style="{DynamicResource SkinWindowStyle}"
+        Title="مدیریت کاربر ها" Height="300" Width="400">
+    <Grid Background="{DynamicResource WindowBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Column="0" Width="300" Margin="10">
+            <Button x:Name="delAccnt" Content="حذف کاربر" Height="20" DockPanel.Dock="Left" Click="delAccnt_Click"/>
+            <TextBlock Text="حذف کابر:" FlowDirection="RightToLeft" Margin="10" VerticalAlignment="Center" DockPanel.Dock="Right"/>
+            <ComboBox x:Name="accounts"  Margin="10" VerticalAlignment="Center" HorizontalAlignment="Stretch" DockPanel.Dock="Left">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding username}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="0" Width="300" Margin="10">
+            <CheckBox x:Name="isAdmin" Content="کاربر مدیر" DockPanel.Dock="Bottom" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+            <Button x:Name="addAccnt" Content="ثبت کاربر" Height="20" DockPanel.Dock="Left" Click="addAccnt_Click"/>
+            <TextBlock Text="نام کاربر جدید:" FlowDirection="RightToLeft" Margin="10" VerticalAlignment="Center" DockPanel.Dock="Right"/>
+            <TextBox x:Name="newUser" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Stretch" DockPanel.Dock="Left"/>
+        </DockPanel>
+        <UniformGrid Columns="2" Grid.Row="2">
+            <Button x:Name="cancell" Width="150" Height="50" Content="خروج" Click="cancell_Click"/>
+        </UniformGrid>
+    </Grid>
+</Window>

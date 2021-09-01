@@ -1,0 +1,56 @@
+﻿<Window x:Class="Spadana_Music.Win_addTerm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Spadana_Music"
+        mc:Ignorable="d"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Style="{DynamicResource SkinWindowStyle}"
+        Name="winTerm"
+        Title="ثبت ترم جدید موسیقی" Height="350" Width="557">
+    <Grid Background="{DynamicResource WindowBackgroundBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10">
+            <TextBlock Text="نام موسیقی:" Margin="10" FlowDirection="RightToLeft" VerticalAlignment="Center" DockPanel.Dock="Right"/>
+            <TextBox x:Name="instrName" Width="150" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left" DockPanel.Dock="Left"/>
+        </DockPanel>
+        <DockPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10">
+            <TextBlock Text="تعداد جلسات:" FlowDirection="RightToLeft" Margin="10" VerticalAlignment="Center" DockPanel.Dock="Right"/>
+            <TextBox x:Name="sessionCount" Width="150" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left" DockPanel.Dock="Left"/>
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10">
+            <TextBlock Text="هزینه ترم:" FlowDirection="RightToLeft" Margin="10" VerticalAlignment="Center" DockPanel.Dock="Right"/>
+            <TextBox x:Name="sessionPrice" Width="150" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left" DockPanel.Dock="Left"/>
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10">
+            <TextBlock Text="مدت زمان کلاس:" Margin="10" FlowDirection="RightToLeft" VerticalAlignment="Center" DockPanel.Dock="Right"/>
+            <TextBox x:Name="sessionTime" Width="150" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        </DockPanel>
+        <DockPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10">
+            <TextBlock Text="استاد مربوطه:" Margin="10" FlowDirection="RightToLeft" VerticalAlignment="Center" DockPanel.Dock="Right"/>
+            <ComboBox x:Name="teacher" Width="150" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
+                            <TextBlock Text="{Binding First_Name}" Margin="5"/>
+                            <TextBlock Text="{Binding Last_Name}" Margin="5"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </DockPanel>
+        
+        <Button x:Name="addItem" Content="ثبت" Grid.Row="3" Margin="10" Click="addItem_Click"/>
+        <Button x:Name="cancel" Content="لغو" Grid.Row="3" Grid.Column="1" Margin="10" Click="cancel_Click"/>
+    </Grid>
+</Window>

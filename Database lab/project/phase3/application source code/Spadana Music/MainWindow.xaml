@@ -1,0 +1,357 @@
+﻿<Window x:Class="Spadana_Music.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Spadana_Music"
+        mc:Ignorable="d"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Style="{DynamicResource SkinWindowStyle}"
+        Title="MainWindow" Height="585" Width="800" Activated="Window_Activated">
+    <Grid Background="{DynamicResource WindowBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Menu FlowDirection="RightToLeft">
+            <MenuItem Header="فایل">
+                <MenuItem Header="ذخیره فایل پشتیبان" Click="MenuItem_Click_backup"/>
+                <MenuItem Header="بازگردانی فایل پشتیبان" Click="MenuItem_Click_restore"/>
+                <Separator/>
+                <MenuItem Header="خروج" Click="MenuItem_Click_Exite"/>
+            </MenuItem>
+            <MenuItem Header="حساب کاربری">
+                <MenuItem Header="تغیر رمز کاربری" Click="MenuItem_Click_changePass"/>
+                <MenuItem Header="مدیریت کاربر ها" Name="manageAccount" Click="MenuItem_Click_manageAccount"/>
+            </MenuItem>
+            <MenuItem Header="امور مالی" Name="finance">
+                <MenuItem Header="افزایش حقوق کارکنان" Name="emProm" Click="Prom_Click"/>
+                <MenuItem Header="افزایش قیمت ترم ها" Name="trProm" Click="Prom_Click"/>
+            </MenuItem>
+            <MenuItem Header="درباره ما">
+                <MenuItem Header="گروه اسپادانا" Click="MenuItem_Click_AboutUs"/>
+            </MenuItem>
+        </Menu>
+        <TabControl x:Name="tb" TabStripPlacement="Left" Grid.Row="1">
+            <TabItem Header="هنرجو ها">
+                <DockPanel>
+                    <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top">
+                        <TextBlock Text="جستجو :" Margin="5" DockPanel.Dock="Right" FlowDirection="RightToLeft"/>
+                        <TextBox x:Name="tbSearchStudent" Margin="5" FlowDirection="RightToLeft" TextChanged="tbSearchStudent_TextChanged"/>
+                    </DockPanel>
+                    <ListBox x:Name="lbStudent" MinHeight="100" Margin="5" FlowDirection="RightToLeft">
+                        <ListBox.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Name="delSt" Header="حذف" Click="MenuItem_Click_RemoveSt" HorizontalAlignment="Center"/>
+                                <MenuItem Name="editSt" Header="اطلاعات بیشتر و ویرایش" Click="MenuItem_Click_EditSt"/>
+                                <MenuItem Header="تعداد حاضری در کلاس ها" Click="MenuItem_Click_numAttn"/>
+                            </ContextMenu>
+                        </ListBox.ContextMenu>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" HorizontalAlignment="Right">
+                                    <TextBlock Text="{Binding First_Name}" FontSize="16" Margin="0,0,25,0"/>
+                                    <TextBlock Text="{Binding Last_Name}" FontSize="16" Margin="5,0"/>
+                                    <StackPanel Orientation="Vertical" Margin="25,0">
+                                        <TextBlock Text="{Binding SID}" Foreground="Gray" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="شماره هنرجویی" HorizontalAlignment="Center" Foreground="DarkKhaki"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical" Margin="25,0">
+                                        <TextBlock Text="{Binding Birth_Date}" Foreground="Gray" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="تاریخ تولد" HorizontalAlignment="Center" Foreground="DarkKhaki"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical" Margin="25,0,10,0">
+                                        <TextBlock Text="{Binding National_Code}" Foreground="Gray" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="کد ملی" HorizontalAlignment="Center" Foreground="DarkKhaki"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical" Margin="25,0,10,0">
+                                        <TextBlock Text="{Binding Phone}" Foreground="Gray" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="همراه" HorizontalAlignment="Center" Foreground="DarkKhaki"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="اساتید" >
+                <DockPanel>
+                    <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top">
+                        <TextBlock Text="جستجو :" Margin="5" DockPanel.Dock="Right" FlowDirection="RightToLeft"/>
+                        <TextBox x:Name="tbSearchTeacher" Margin="5" FlowDirection="RightToLeft" TextChanged="tbSearchTeacher_TextChanged"/>
+                    </DockPanel>
+                    <ListBox x:Name="lbTeacher" MinHeight="100" Margin="5">
+                        <ListBox.ContextMenu>
+                            <ContextMenu Name="cmTch">
+                                <MenuItem Header="حذف" Click="MenuItem_Click_RemoveTCh" HorizontalAlignment="Center"/>
+                                <MenuItem Name="miTch" Header="اطلاعات بیشتر و ویرایش" Click="MenuItem_Click_editEmp"/>
+                            </ContextMenu>
+                        </ListBox.ContextMenu>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Last_Name}" FontSize="16" Margin="5,0"/>
+                                    <TextBlock Text="{Binding First_Name}" FontSize="16" Margin="0,0,25,0"/>
+                                    <StackPanel Orientation="Vertical" Margin="25,0">
+                                        <TextBlock Text="{Binding Instr_Name}" Foreground="Gray"/>
+                                        <TextBlock Text="مدرس" HorizontalAlignment="Center" Foreground="DarkKhaki"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical" Margin="25,0">
+                                        <TextBlock Text="{Binding National_Code}" Foreground="Gray"/>
+                                        <TextBlock Text="کد ملی" HorizontalAlignment="Center" Foreground="DarkKhaki"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical" Margin="25,0,10,0">
+                                        <TextBlock Text="{Binding Phone}" Foreground="Gray"/>
+                                        <TextBlock Text="شماره همراه" HorizontalAlignment="Center" Foreground="DarkKhaki"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="کارمند ها">
+                <DockPanel>
+                    <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top">
+                        <TextBlock Text="جستجو :" Margin="5" DockPanel.Dock="Right" FlowDirection="RightToLeft"/>
+                        <TextBox x:Name="tbSearchEmployee" Margin="5" FlowDirection="RightToLeft" TextChanged="tbSearchEmployee_TextChanged"/>
+                    </DockPanel>
+                    <ListBox x:Name="lbEmployee" MinHeight="100" Margin="5">
+                        <ListBox.ContextMenu>
+                            <ContextMenu Name="cmEm">
+                                <MenuItem Header="حذف" Click="MenuItem_Click_RemoveEm" HorizontalAlignment="Center"/>
+                                <MenuItem Header="اطلاعات بیشتر و ویرایش" Click="MenuItem_Click_editEmp"/>
+                            </ContextMenu>
+                        </ListBox.ContextMenu>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Last_Name}" FontSize="16" Margin="5,0"/>
+                                    <TextBlock Text="{Binding First_Name}" FontSize="16" Margin="0,0,25,0"/>
+                                    <StackPanel Orientation="Vertical" Margin="25,0">
+                                        <TextBlock Text="{Binding National_Code}" Foreground="Gray"/>
+                                        <TextBlock Text="کد ملی" HorizontalAlignment="Center" Foreground="DarkKhaki"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical" Margin="25,0,10,0">
+                                        <TextBlock Text="{Binding Phone}" Foreground="Gray"/>
+                                        <TextBlock Text="شماره همراه" HorizontalAlignment="Center" Foreground="DarkKhaki"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="ترم های موسیقی">
+                <DockPanel Margin="5">
+                    <Grid Height="auto" Width="750" HorizontalAlignment="Left" DockPanel.Dock="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property='Margin' Value='0,5' />
+                                <Setter Property='Foreground' Value='Goldenrod' />
+                                <Setter Property='TextWrapping' Value='Wrap' />
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </Grid.Resources>
+                        <TextBlock Text="ساز"/>
+                        <TextBlock Text="نام استاد" Grid.Column="1"/>
+                        <TextBlock Text="تعداد جلسات" Grid.Column="2"/>
+                        <TextBlock Text="مدت زمان کلاس" Grid.Column="3"/>
+                        <TextBlock Text="قیمت ترم" Grid.Column="4"/>
+                    </Grid>
+                    <ListBox x:Name="lbTerm" MinHeight="100">
+                        <ListBox.ContextMenu>
+                            <ContextMenu Name="cmTr">
+                                <MenuItem Header="حذف" Click="MenuItem_Click_RemoveTr" HorizontalAlignment="Center"/>
+                                <MenuItem Header="اطلاعات بیشتر و ویرایش" Click="MenuItem_Click_editTr"/>
+                            </ContextMenu>
+                        </ListBox.ContextMenu>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Height="auto" Width="750">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.Resources>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property='Margin' Value='5,5' />
+                                            <Setter Property='Foreground' Value='Black' />
+                                            <Setter Property='TextWrapping' Value='Wrap' />
+                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                        </Style>
+                                    </Grid.Resources>
+                                    <TextBlock Text="{Binding Instr_Name}"/>
+                                    <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Center">
+                                        <TextBlock Text="{Binding Last_Name}" Margin="5"/>
+                                        <TextBlock Text="{Binding First_Name}" Margin="5"/>
+                                    </StackPanel>
+                                    <TextBlock Text="{Binding Session_Count}" Grid.Column="2"/>
+                                    <TextBlock Text="{Binding Session_Time}"  Grid.Column="3"/>
+                                    <TextBlock Text="{Binding Session_Price}" Grid.Column="4"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="برنامه هفتگی" >
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Margin" Value="5,0"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </Grid.Resources>
+                    <StackPanel Grid.ColumnSpan="2" FlowDirection="RightToLeft" HorizontalAlignment="Right" Orientation="Horizontal" Margin="2">
+                        <TextBlock Text="بر اساس استاد:" Margin="5"/>
+                        <ComboBox Name="cbTchClasses" Width="150" Margin="5" DropDownClosed="cbTchClasses_DropDownClosed">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding First_Name}" Margin="2"/>
+                                        <TextBlock Text="{Binding Last_Name}" Margin="2"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        <Button x:Name="btnAllDayClasses" Content="برنامه کل" Click="btnAllDayClasses_Click" Margin="5"/>
+                    </StackPanel>
+                    <TextBlock Text="شنبه" Grid.Row="1" Grid.Column="1"/>
+                    <TextBlock Text="یک شنبه" Grid.Row="2" Grid.Column="1"/>
+                    <TextBlock Text="دو شنبه" Grid.Row="3" Grid.Column="1"/>
+                    <TextBlock Text="سه شنبه" Grid.Row="4" Grid.Column="1"/>
+                    <TextBlock Text="چهار شنبه" Grid.Row="5" Grid.Column="1"/>
+                    <TextBlock Text="پنج شنبه" Grid.Row="6" Grid.Column="1"/>
+                    <ListBox x:Name="lbCTSat" Grid.Row="1" FlowDirection="RightToLeft">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Margin="3">
+                                    <TextBlock Text="کلاس " />
+                                    <TextBlock Text="{Binding Instr_Name}"/>
+                                    <TextBlock Text="   با استاد " />
+                                    <TextBlock Text="{Binding First_Name}" Margin="5,0"/>
+                                    <TextBlock Text="{Binding Last_Name}"/>
+                                    <TextBlock Text="    ساعت "/>
+                                    <TextBlock Text="{Binding hour}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <ListBox x:Name="lbCTSun" Grid.Row="2" FlowDirection="RightToLeft">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Margin="3">
+                                    <TextBlock Text="کلاس " />
+                                    <TextBlock Text="{Binding Instr_Name}"/>
+                                    <TextBlock Text="   با استاد " />
+                                    <TextBlock Text="{Binding First_Name}" Margin="5,0"/>
+                                    <TextBlock Text="{Binding Last_Name}"/>
+                                    <TextBlock Text="    ساعت "/>
+                                    <TextBlock Text="{Binding hour}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <ListBox x:Name="lbCTMon" Grid.Row="3" FlowDirection="RightToLeft">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Margin="3">
+                                    <TextBlock Text="کلاس " />
+                                    <TextBlock Text="{Binding Instr_Name}"/>
+                                    <TextBlock Text="   با استاد " />
+                                    <TextBlock Text="{Binding First_Name}" Margin="5,0"/>
+                                    <TextBlock Text="{Binding Last_Name}"/>
+                                    <TextBlock Text="    ساعت "/>
+                                    <TextBlock Text="{Binding hour}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <ListBox x:Name="lbCTues" Grid.Row="4" FlowDirection="RightToLeft">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Margin="3">
+                                    <TextBlock Text="کلاس " />
+                                    <TextBlock Text="{Binding Instr_Name}"/>
+                                    <TextBlock Text="   با استاد " />
+                                    <TextBlock Text="{Binding First_Name}" Margin="5,0"/>
+                                    <TextBlock Text="{Binding Last_Name}"/>
+                                    <TextBlock Text="    ساعت "/>
+                                    <TextBlock Text="{Binding hour}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <ListBox x:Name="lbCWed" Grid.Row="5" FlowDirection="RightToLeft">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Margin="3">
+                                    <TextBlock Text="کلاس " />
+                                    <TextBlock Text="{Binding Instr_Name}"/>
+                                    <TextBlock Text="   با استاد " />
+                                    <TextBlock Text="{Binding First_Name}" Margin="5,0"/>
+                                    <TextBlock Text="{Binding Last_Name}"/>
+                                    <TextBlock Text="    ساعت "/>
+                                    <TextBlock Text="{Binding hour}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <ListBox x:Name="lbCTThurs" Grid.Row="6" FlowDirection="RightToLeft">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Margin="3">
+                                    <TextBlock Text="کلاس " />
+                                    <TextBlock Text="{Binding Instr_Name}"/>
+                                    <TextBlock Text="   با استاد " />
+                                    <TextBlock Text="{Binding First_Name}" Margin="5,0"/>
+                                    <TextBlock Text="{Binding Last_Name}"/>
+                                    <TextBlock Text="    ساعت "/>
+                                    <TextBlock Text="{Binding hour}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <DockPanel Grid.Row="2">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                <TextBlock Text="تاریخ روز:" VerticalAlignment="Center" Margin="5"/>
+                <TextBlock x:Name="onlineTime" VerticalAlignment="Center" Margin="5" MouseDown="onlineTime_MouseDown"/>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="btnAddStudent" Content="ثبت هنرجو" Height="30" Margin="5,10" Click="btnAddStudent_Click"/>
+                <Button x:Name="btnAddEmployee" Content="ثبت کارمند" Height="30" Margin="5,10" Click="btnAddEmployee_Click"/>
+                <Button x:Name="btnAddTerm" Content="ثبت ترم موسیقی جدید" Height="30" Margin="5,10" Click="btnAddTerm_Click"/>
+                <Button x:Name="btnAttendance" Content="حضور غیاب" Height="30" Margin="5,10" Click="btnAttendance_Click"/>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Window>

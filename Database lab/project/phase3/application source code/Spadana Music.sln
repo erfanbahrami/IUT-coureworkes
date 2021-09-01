@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spadana Music", "Spadana Music\Spadana Music.csproj", "{9713F8FE-E3C0-4DCB-8DF6-3A8F7EF9DCDB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AE52F661-290A-4C9F-BB20-BCC5DE336112} = {AE52F661-290A-4C9F-BB20-BCC5DE336112}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModelLayer", "DataModelLayer\DataModelLayer.csproj", "{AE52F661-290A-4C9F-BB20-BCC5DE336112}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{25B2905B-14C8-4730-80E0-7AFBEF79B429}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9713F8FE-E3C0-4DCB-8DF6-3A8F7EF9DCDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9713F8FE-E3C0-4DCB-8DF6-3A8F7EF9DCDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9713F8FE-E3C0-4DCB-8DF6-3A8F7EF9DCDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9713F8FE-E3C0-4DCB-8DF6-3A8F7EF9DCDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE52F661-290A-4C9F-BB20-BCC5DE336112}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE52F661-290A-4C9F-BB20-BCC5DE336112}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE52F661-290A-4C9F-BB20-BCC5DE336112}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE52F661-290A-4C9F-BB20-BCC5DE336112}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25B2905B-14C8-4730-80E0-7AFBEF79B429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25B2905B-14C8-4730-80E0-7AFBEF79B429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25B2905B-14C8-4730-80E0-7AFBEF79B429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25B2905B-14C8-4730-80E0-7AFBEF79B429}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C555E01-D4A8-4192-BF37-72F20A555082}
+	EndGlobalSection
+EndGlobal

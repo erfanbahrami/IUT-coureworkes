@@ -1,0 +1,79 @@
+﻿<Window x:Class="Spadana_Music.Win_addEmployee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Spadana_Music"
+        mc:Ignorable="d"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Style="{DynamicResource SkinWindowStyle}"
+        x:Name="addEmployee"
+        Title="ثبت کارمند" Height="500" Width="557">
+    <Grid Background="{DynamicResource WindowBackgroundBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10">
+            <TextBlock Text="نام:" Margin="10" FlowDirection="RightToLeft" VerticalAlignment="Center" DockPanel.Dock="Right"/>
+            <TextBox x:Name="emName" Width="150" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left" DockPanel.Dock="Left"/>
+        </DockPanel>
+        <DockPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10">
+            <TextBlock Text="نام خانوادگی:" FlowDirection="RightToLeft" Margin="10" VerticalAlignment="Center" DockPanel.Dock="Right"/>
+            <TextBox x:Name="emLastName" Width="150" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left" DockPanel.Dock="Left"/>
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10">
+            <TextBlock Text="تاریخ تولد:" FlowDirection="RightToLeft" Margin="10" VerticalAlignment="Center" DockPanel.Dock="Right"/>
+            <TextBox x:Name="emBirthDate" Width="150" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left" DockPanel.Dock="Left"/>
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10">
+            <TextBlock Text="کد ملی:" Margin="10" FlowDirection="RightToLeft" VerticalAlignment="Center" DockPanel.Dock="Right"/>
+            <TextBox x:Name="emNationalCode" Width="150" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        </DockPanel>
+        <DockPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10">
+            <TextBlock Text="تلفن همراه:" Margin="10" FlowDirection="RightToLeft" VerticalAlignment="Center" DockPanel.Dock="Right"/>
+            <TextBox x:Name="emPhone" Width="150" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        </DockPanel>
+        <DockPanel Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10">
+            <TextBlock Text="تلفن ثابت:" Margin="10" FlowDirection="RightToLeft" VerticalAlignment="Center" DockPanel.Dock="Right"/>
+            <TextBox x:Name="emTel" Width="150" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        </DockPanel>
+        <DockPanel Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10">
+            <TextBlock Text="آدرس:" Margin="10" FlowDirection="RightToLeft" VerticalAlignment="Center" DockPanel.Dock="Right"/>
+            <TextBox x:Name="emAddress" Width="150" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        </DockPanel>
+        <DockPanel Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10">
+            <TextBlock Text="حقوق پایه:" Margin="10" FlowDirection="RightToLeft" VerticalAlignment="Center" DockPanel.Dock="Right"/>
+            <TextBox x:Name="emSalary" Width="150" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        </DockPanel>
+        <DockPanel Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10">
+            <TextBlock Text="کد بیمه:" Margin="10" FlowDirection="RightToLeft" VerticalAlignment="Center" DockPanel.Dock="Right"/>
+            <TextBox x:Name="emInsNum" Width="150" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        </DockPanel>
+        <DockPanel Grid.Row="4" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10">
+            <StackPanel>
+                <RadioButton x:Name="rbIsMarital" GroupName="marital" Content="متاهل" Margin="5"/>
+                <RadioButton x:Name="rbIsAlone" GroupName="marital" Content="مجرد" Margin="5"/>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Right" HorizontalAlignment="Right">
+                <RadioButton x:Name="rbIsTch" GroupName="Emp" Content="استاد" Margin="5" />
+                <RadioButton x:Name="rbIsEm" GroupName="Emp" Content="کارمند" Margin="5" />
+            </StackPanel>
+        </DockPanel>
+        <DockPanel Grid.Row="5" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10">
+            <TextBlock Text="افزایش حقوق:" Margin="10" FlowDirection="RightToLeft" VerticalAlignment="Center" DockPanel.Dock="Right"/>
+            <TextBox x:Name="promote" Width="150" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        </DockPanel>
+        <Button x:Name="addItem" Content="ثبت" Grid.Row="6" Margin="10" Click="addItem_Click"/>
+        <Button x:Name="cancel" Content="لغو" Grid.Row="6" Grid.Column="1" Margin="10" Click="cancel_Click"/>
+    </Grid>
+</Window>

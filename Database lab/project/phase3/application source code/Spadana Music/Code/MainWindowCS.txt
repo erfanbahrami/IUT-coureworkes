@@ -1,0 +1,27 @@
+﻿using Common;
+
+namespace WorkTimerTracker
+{
+  /// <summary>
+  /// Interaction logic for MainWindow.xaml
+  /// </summary>
+  public partial class MainWindow : Window
+  {
+  ==>  private Settings mSettings = new Settings( @"MainWindow" );	<------------
+
+//////////// Start ////////////////
+    public Common.Settings Settings
+    {
+      get
+      {
+        return mSettings;
+      }
+    }
+////////////Finish //////////////
+
+    public MainWindow()
+    {
+      InitializeComponent();
+    }
+  }
+}
