@@ -1,0 +1,13 @@
+VERSION:3 SOURCE_TIMESTAMP:517C5A23
+NODE:I LEVEL:0 LINE:23 "C:\cvavr\inc\mega16.h"
+NODE:I LEVEL:0 LINE:25 "C:\cvavr\inc\delay.h"
+NODE:I LEVEL:0 LINE:28 "C:\cvavr\inc\alcd.h"
+NODE:I LEVEL:0 LINE:29 "C:\cvavr\inc\stdio.h"
+NODE:M LEVEL:0 LINE:32 "ADC_VREF_TYPE"
+NODE:V LEVEL:0 LINE:33 "myadcPin -> R4,R5"
+NODE:V LEVEL:0 LINE:34 "stage1 -> RAM:????"
+NODE:V LEVEL:0 LINE:35 "stage2 -> RAM:????"
+NODE:F LEVEL:0 LINE:37 "read_myadcPin(int adcPin)"
+NODE:F LEVEL:0 LINE:43 "result(void)"
+NODE:F LEVEL:0 LINE:71 "adc_isr(void)"
+NODE:F LEVEL:0 LINE:91 "main(void)"
