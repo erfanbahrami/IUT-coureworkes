@@ -1,0 +1,5 @@
+#ifndef _MEGA16_INCLUDED_
+#define _MEGA16_INCLUDED_
+
+void initialization_USART(int baudrate,int RX,int TX);
+#endif

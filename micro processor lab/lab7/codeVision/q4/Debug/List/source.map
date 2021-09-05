@@ -1,0 +1,49 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+rx_buffer                                                                         0x0160       8
+tx_buffer                                                                         0x0168       8
+_base_y                                                                           0x0170       4
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+rx_wr_index                                                                       R5           1
+rx_rd_index                                                                       R4           1
+rx_counter                                                                        R7           1
+rx_buffer_overflow                                                                R2.0      1bit
+tx_wr_index                                                                       R6           1
+tx_rd_index                                                                       R9           1
+tx_counter                                                                        R8           1
+_lcd_x                                                                            R11          1
+_lcd_y                                                                            R10          1
+_lcd_maxx                                                                         R13          1
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+q4                                                                                0x0009D    119
+usart_rx_isr                                                                      0x00114     31
+getchar                                                                           0x00133     19
+usart_tx_isr                                                                      0x00146     23
+putchar                                                                           0x0015D     27
+main                                                                              0x00178     29
+initialization_USART                                                              0x00195    113
+_lcd_write_nibble_G100                                                            0x00206     20
+_lcd_write_data                                                                   0x0021A     12
+lcd_gotoxy                                                                        0x00226     13
+lcd_clear                                                                         0x00233     12
+lcd_putchar                                                                       0x0023F     21
+lcd_puts                                                                          0x00254     16
+lcd_init                                                                          0x00264     46
+put_usart_G101                                                                    0x00292     11
+put_buff_G101                                                                     0x0029D     58
+_print_G101                                                                       0x002D7    308
+sprintf                                                                           0x0040B     46
+printf                                                                            0x00439     31
+strlen                                                                            0x00458     12
+strlenf                                                                           0x00464     13

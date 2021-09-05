@@ -1,0 +1,2 @@
+main DSTACK_USAGE:0 DSTACK_LEVEL:0 FILE:"source.c" LINE:32
+initialization_USART DSTACK_USAGE:20 DSTACK_LEVEL:20 FILE:"source\initialization.c" LINE:3

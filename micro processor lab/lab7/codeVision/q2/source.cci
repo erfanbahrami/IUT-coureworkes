@@ -1,0 +1,6 @@
+VERSION:3 SOURCE_TIMESTAMP:5189476A
+NODE:I LEVEL:0 LINE:24 "C:\cvavr\inc\mega16.h"
+NODE:I LEVEL:0 LINE:29 "C:\cvavr\inc\stdio.h"
+NODE:I LEVEL:0 LINE:30 "C:\Users\ITJonoob\Documents\codevision\az7\q1\source\initialization.h"
+NODE:V LEVEL:0 LINE:31 "name -> RAM:????"
+NODE:F LEVEL:0 LINE:33 "main(void)"
